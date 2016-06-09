@@ -15,9 +15,9 @@
 	$autor = $_POST["txtAutor"];
 
 	if(isset($_POST["checkAdm"]))
-	$admin = true;
+	$adm = true;
 	else
-	$admin = false;
+	$adm = false;
 	if(isset($_POST["checkDireito"]))
 	$direito = true;
 	else
@@ -55,6 +55,18 @@
 
 	$camposOK = true;
 
+	if($email == ""){
+		echo "Favor informar email <br>";
+		$camposOK = false;
+	}
+
+	if($senha == " "){
+		echo "Favor informar uma senha <br>";
+		$camposOK = false;
+	}
+	
+
+
 	if($nome == ""){
 	echo "Nome incorreto <br>";
 	$camposOK = false;
@@ -77,35 +89,34 @@
 		
 	if($camposOK){
 	echo "<table border='0' cellpadding='5'>";
-	echo "<tr><td><img height='120' width='120' src='$file_src'></td></tr> ";
 	echo "<tr><td>NOME:</td><td><b>$nome</b></td></tr>";
 	echo "<tr><td>SOBRENOME:</td><td><b>$snome</b></td></tr>";
 	echo "<tr><td>EMAIL:</td><td><b>$email</b></td></tr>";
 	echo "<tr><td>DATA DE NASCIMENTO:</td><td><b>$dtNasc</b></td></tr>";
 	echo "<tr><td>SENHA:</td><td><b>$senha1</b></td></tr>";
+	echo "<tr><td>AUTOR FAVORITO:</td><td><b>$autor</b></td></tr>";
 	echo "<tr><td>Gêneros Literários:</td><td><b>";
-	if($admin)
+	if($adm)
 	echo"Administração <br>";
 	if($direito)
 	echo"Direito <br>";
-	if($LitEstrang)
+	if($litestrang)
 	echo"Literatura Estrangeira<br>";
-	if($LitNac)
+	if($litnac)
 	echo"Literatura Nacional <br>";
-	if($AutoAjuda)
+	if($autoajuda)
 	echo"Auto-Ajuda <br>";
 	if($romance)
 	echo"Romance <br>";
-	if($Informatica)
+	if($informatica)
 	echo"Informática <br>";
-	if($med)
+	if($medicina)
 	echo"Medicina e Saúde<br>";
 	if($religiao)
 	echo"Religião <br>";
 	echo"</b></td></tr></table>";
 	
 }                                             
-
 
 
 
