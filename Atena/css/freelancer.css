@@ -470,7 +470,11 @@ footer .footer-below {
 	background-color: #1a242f;
 }
 #entrarcima{
-	padding-right: 20px;
+	padding-right: 5px;
+}
+#entrarcima a:hover{
+	color: #ffffff;
+	background-color: #1a242f;
 }
 .imglogocima{
     position: relative;
@@ -482,4 +486,9 @@ footer .footer-below {
 #box-logo{
 	position: relative;
 	bottom:30px;
+}
+#saibaMais{
+	position: relative;
+	left: 1050px;
+	top: 70px;
 }
