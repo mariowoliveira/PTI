@@ -91,7 +91,25 @@
 				echo "<b>Data Inválida</b>";
 				$camposOK= false;
 			}
-
+		if($admin)
+			echo"Administração <br>";
+		if($direito)
+			echo"Direito <br>";
+		if($litEstrang)
+			echo"Literatura Estrangeira<br>";
+		if($litNac)
+			echo"Literatura Nacional <br>";
+		if($autoAjuda)
+			echo"Auto-Ajuda <br>";
+		if($romance)
+			echo"Romance <br>";
+		if($informatica)
+			echo"Informática <br>";
+		if($medicina)
+			echo"Medicina e Saúde<br>";
+		if($religiao)
+			echo"Religião <br>";
+			echo"</b></td></tr></table>";
 
 
 		
@@ -105,24 +123,24 @@
 	echo "<tr><td>SENHA:</td><td><b>$senha1</b></td></tr>";
 	echo "<tr><td>Gêneros Literários:</td><td><b>";
 	if($admin)
-	echo"Administração <br>";
+		echo"Administração <br>";
 	if($direito)
-	echo"Direito <br>";
+		echo"Direito <br>";
 	if($litEstrang)
-	echo"Literatura Estrangeira<br>";
+		echo"Literatura Estrangeira<br>";
 	if($litNac)
-	echo"Literatura Nacional <br>";
+		echo"Literatura Nacional <br>";
 	if($autoAjuda)
-	echo"Auto-Ajuda <br>";
+		echo"Auto-Ajuda <br>";
 	if($romance)
-	echo"Romance <br>";
+		echo"Romance <br>";
 	if($informatica)
-	echo"Informática <br>";
+		echo"Informática <br>";
 	if($medicina)
-	echo"Medicina e Saúde<br>";
+		echo"Medicina e Saúde<br>";
 	if($religiao)
-	echo"Religião <br>";
-	echo"</b></td></tr></table>";
+		echo"Religião <br>";
+		echo"</b></td></tr></table>";
 	
 }                                             
 
