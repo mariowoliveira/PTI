@@ -11,8 +11,8 @@
 	$nome = $_POST["txtNome"];
 	$snome = $_POST["txtSnome"];
 	$email = $_POST["txtEmail"];
-	$dtNasc = $_POST["txtData"];
-	$autor = $_POST["txtAutor"];
+	$dataNasc = $_POST["txtData"];
+	$autorFavorito = $_POST["txtAutor"];
 
 	if(isset($_POST["checkAdm"]))
 	$admin = true;
@@ -23,17 +23,17 @@
 	else
 	$direito = false;
 	if(isset($_POST["checkLitEstrang"]))
-	$litestrang = true;
+	$litEstrang = true;
 	else
-	$litestrang = false;
+	$litEstrang = false;
 	if(isset($_POST["checkLitNac"]))
-	$litnac = true;
+	$litNac = true;
 	else
-	$litnac = false;
+	$litNac = false;
 	if(isset($_POST["checkAutoAjuda"]))
-	$autoajuda = true;
+	$autoAjuda = true;
 	else
-	$autoajuda = false;
+	$autoAjuda = false;
 	if(isset($_POST["checkRomance"]))
 	$romance = true;
 	else
@@ -67,38 +67,58 @@
 	echo "Senha não correspondente";
 	$camposOK = false;
 	}
- 	$dia = substr($dtNasc,0,2);
-	$mes = substr($dtNasc,3,2);
-	$ano = substr($dtNasc,6,4);
-	
+
+	//data
+ 	$dia = substr($dataNasc,0,2);
+	$mes = substr($dataNasc,3,2);
+	$ano = substr($dataNasc,6,4);
+	if($dataNasc == ""){
+				$verificaData = false;
+			}
+			if(($mes < 1) || ($mes > 12)){
+				$verificaData = false;
+			}else if(($dia < 1) || ($dia > 31)){
+				$verificaData = false;
+			}else if(($mes == 4) || ($mes == 6) || ($mes == 9) || ($mes == 11) && ($dia == 31)){
+				$verificaData = false;
+			}else if($mes == 2){	
+				$isleap = (($ano % 4 == 0) && ($ano % 100 != 0) || ($ano % 400 == 0));
+			if(($dia > 29) || ($dia == 29) && ($isleap == false)){
+				$verificaData = false;
+			}
+		 	}	
+			if($verificaData == false){
+				echo "<b>Data Inválida</b>";
+				$camposOK= false;
+			}
 
 
 
 		
 	if($camposOK){
 	echo "<table border='0' cellpadding='5'>";
-	echo "<tr><td><img height='120' width='120' src='$file_src'></td></tr> ";
 	echo "<tr><td>NOME:</td><td><b>$nome</b></td></tr>";
 	echo "<tr><td>SOBRENOME:</td><td><b>$snome</b></td></tr>";
 	echo "<tr><td>EMAIL:</td><td><b>$email</b></td></tr>";
-	echo "<tr><td>DATA DE NASCIMENTO:</td><td><b>$dtNasc</b></td></tr>";
+	echo "<tr><td>DATA DE NASCIMENTO:</td><td><b>$dataNasc</b></td></tr>";
+	echo "<tr><td>AUTOR FAVORITO:</td><td><b>$autorFavorito</b></td></tr>";
 	echo "<tr><td>SENHA:</td><td><b>$senha1</b></td></tr>";
 	echo "<tr><td>Gêneros Literários:</td><td><b>";
 	if($admin)
 	echo"Administração <br>";
 	if($direito)
 	echo"Direito <br>";
-	if($LitEstrang)
+	if($litEstrang)
 	echo"Literatura Estrangeira<br>";
-	if($LitNac)
+	if($litNac)
 	echo"Literatura Nacional <br>";
-	if($AutoAjuda)
+	if($autoAjuda)
 	echo"Auto-Ajuda <br>";
 	if($romance)
 	echo"Romance <br>";
-	if($Informatica)
+	if($informatica)
 	echo"Informática <br>";
-	if($med)
+	if($medicina)
 	echo"Medicina e Saúde<br>";
 	if($religiao)
 	echo"Religião <br>";
