@@ -348,7 +348,7 @@ footer .footer-above {
 }
 
 footer .footer-col {
-    margin-bottom: 50px;
+    margin-bottom: 0px;
 }
 
 footer .footer-below {
@@ -465,12 +465,21 @@ footer .footer-below {
 	color: #ffffff;
 	background-color: #1a242f;
 }
+.npc{
+	position: absolute;
+	bottom:70px;
+	left:430px
+}
+#cad{
+	padding-left: 10px;
+}
 #cad a:hover{
 	color: #ffffff;
 	background-color: #1a242f;
 }
 #entrarcima{
-	padding-right: 5px;
+	padding-right: 10px;
+	background-color: #1a242f;
 }
 #entrarcima a:hover{
 	color: #ffffff;
@@ -489,6 +498,13 @@ footer .footer-below {
 }
 #saibaMais{
 	position: relative;
-	left: 1050px;
+	left: 1300px;
 	top: 70px;
+}
+#logocima{
+	top:5px;
+}
+#aAtena{
+	position: relative;
+	top:-30px;
 }
