@@ -8,6 +8,15 @@
  * http://ReactiveRaven.github.com/jqBootstrapValidation/
  */
 
+  
+if ($this.attr("type") !== undefined && $this.attr("type").toLowerCase() === "senha") {
+              message = "Não é uma senha <!-- data-validator-validemail-message to override -->";
+              if ($this.data("validationValidemailMessage")) {
+                message = $this.data("validationValidemailMessage");
+              } else if ($this.data("validationEmailMessage")) {
+                message = $this.data("validationEmailMessage");
+              }
+              $this.data("validationValidemailMessage", message);
 (function( $ ){
 
 	var createdElements = [];
@@ -183,7 +192,7 @@
             //                                                     EMAIL
             // ---------------------------------------------------------
             if ($this.attr("type") !== undefined && $this.attr("type").toLowerCase() === "email") {
-              message = "Not a valid email address<!-- data-validator-validemail-message to override -->";
+              message = "Não é um endereço válido<!-- data-validator-validemail-message to override -->";
               if ($this.data("validationValidemailMessage")) {
                 message = $this.data("validationValidemailMessage");
               } else if ($this.data("validationEmailMessage")) {

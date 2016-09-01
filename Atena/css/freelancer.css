@@ -459,7 +459,7 @@ footer .footer-below {
 }
 .entrar{
 	float: left;
-	padding-right: 330px;
+	padding-right: 450px;
 }
 .cadastrar{
 	color: #ffffff;
@@ -467,11 +467,11 @@ footer .footer-below {
 }
 .npc{
 	position: absolute;
-	bottom:70px;
-	left:430px
+	bottom:20px;
+	left:370px
 }
 #cad{
-	padding-left: 10px;
+	padding-left: 5px;
 }
 #cad a:hover{
 	color: #ffffff;
